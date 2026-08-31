@@ -1,4 +1,4 @@
-name: getinform.py
+name: OneTrust API Test
 
 on:
   workflow_dispatch:
@@ -8,13 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ONETRUST_TOKEN: ${{ secrets.ONETRUST_TOKEN }}
+      ONETRUST_CLIENT_ID: ${{ secrets.ONETRUST_CLIENT_ID }}
+      ONETRUST_CLIENT_SECRET: ${{ secrets.ONETRUST_CLIENT_SECRET }}
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Python Package
-        run: pip install requests
+      - name: Install Python package
+        run: python -m pip install requests
 
-      - name: Run Script
+      - name: Run script
         run: python getinform.py
+``
