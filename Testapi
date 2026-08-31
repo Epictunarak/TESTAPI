@@ -1,0 +1,9 @@
+import os
+import requests
+
+token = os.environ["ONETRUST_TOKEN"]
+
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Accept": "application/json"
+}
