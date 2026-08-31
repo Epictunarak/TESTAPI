@@ -19,7 +19,7 @@ response = requests.get(
 
 print("Status Code:", response.status_code)
 print("Content-Type:", response.headers.get("Content-Type"))
-
+print(response.text[:2000])
 with open("response.txt", "w", encoding="utf-8") as f:
     f.write(response.text)
 
